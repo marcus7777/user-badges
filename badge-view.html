@@ -1,0 +1,36 @@
+<dom-module id="badge-view">
+  <template>
+    <div class="content">
+      <badge-sm-list on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
+      <template is="dom-if" if="{{admin}}">
+        <badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>
+        <badge-input on-add-badge="addBadge"></badge-input>
+        <paper-button raised on-tap="toggleView" >Done</paper-button>
+      </template>
+    </div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'badge-view',
+    properties: {
+      badges: Array,
+      edit: {value: false}
+    },
+    addBadge: function(e) {
+      this.push('badges', {
+        icon: e.detail.icon,
+        subtitle: e.detail.subtitle,
+        title: e.detail.title,
+        isComplete: false,
+        weight:1
+      });
+    },
+    deleteBadge: function(e) {
+      if (this.edit) this.arrayDelete('badges', e.detail.badge);
+    },
+    toggleView: function() {
+      if (this.edit) this.admin = !this.admin;
+    }
+  });
+</script>
