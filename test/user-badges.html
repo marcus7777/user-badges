@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <title>user-badges</title>
+    <script src="../../webcomponentsjs/webcomponents.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../test-fixture/test-fixture-mocha.js"></script>
+    <link rel="import" href="../../polymer/polymer.html">
+
+    <link rel="import" href="../../test-fixture/test-fixture.html">
+    <link rel="import" href="../user-badges.html">
+  </head>
+  <body>
+    <test-fixture id="userBadges">
+
+      <template>
+        <user-badges></user-badges>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<user-badges>', function () {
+        var userBadges;
+        userBadges = fixture('userBadges');
+        setup(function () {
+        });
+        teardown(function () {
+          //...
+        });
+        suite('basic usage', function () {
+          test('can be triggered with space', function(done) {
+            userBadges.addEventListener('keydown', function() {
+              done();
+            });
+          });
+          test('can be clicked', function(done) {
+            userBadges.addEventListener('click', function() {
+              done();
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
