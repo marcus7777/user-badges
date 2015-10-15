@@ -1,0 +1,38 @@
+<dom-module id="badge-input">
+  <template>
+    <paper-dialog>
+        <paper-input value="{{badgeTitle}}" label="Title"></paper-input>
+        <paper-input value="{{badgeSubtitle}}" label="Subtitle"></paper-input>
+        <icon-pick icon="{{icon}}"></icon-pick>
+      <paper-button on-tap="_add">Add</paper-button>
+    </paper-dialog>
+    <iron-icon icon="add" on-tap="add" ></iron-icon>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'badge-input',
+    // Listen for ENTER key
+    _checkAdd: function(e) {
+      if (e.keyCode === 13) {
+        this._add();
+      }
+    },
+    _add: function() {
+      if (this.badgeTitle && this.badgeSubtitle) {
+        this.fire('add-badge', {
+          title: this.badgeTitle,
+          subtitle: this.badgeSubtitle,
+          icon: this.icon
+        });
+        this.badgeTitle = null;
+        this.badgeSubtitle = null;
+        this.icon = "add";
+        this.$$('paper-dialog').close();
+      }
+    },
+    add: function() {
+      this.$$('paper-dialog').open();
+    }
+  });
+</script>
