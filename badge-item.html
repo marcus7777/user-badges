@@ -1,0 +1,28 @@
+<dom-module id="badge-item">
+  <template>
+    <paper-material style="background: #fff;margin: 16px, 16px;" class="row layout center">
+      <icon-pick style="float:right" icon="{{badge.icon}}"></icon-pick>
+      
+      <paper-input id="badgeTitle" value="{{badge.title}}" label="Title"></paper-input>
+      <paper-input id="badgeSubtitle" value="{{badge.subtitle}}" label="Subtitle"></paper-input>
+      
+      <paper-checkbox style="padding: 0 10px" id="checkbox" checked="{{badge.isComplete}}"></paper-checkbox>
+      <paper-icon-button style="padding:10px;color:gray" icon="delete"
+        aria-label="Delete Badge"
+        tabindex="0"
+        on-tap="_onDelete">
+      </paper-icon-button>
+    </paper-material>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'badge-item',
+    _onDelete: function() {
+      this.fire('delete-badge', {badge: this.badge});
+    },
+    _editIcon: function() {
+      this.$$('paper-dialog').open();
+    }
+  });
+</script>
