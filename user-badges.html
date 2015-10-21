@@ -6,7 +6,7 @@
 -->
 <dom-module id="user-badges">
   <template>
-    <mediator-data data="{{item}}" default-folder="{{badgesDefaultFolder}}" location="[[location]]" folder="[[badgesFolder]]"></mediator-data>
+    <mediator-data as-array="{{item}}" default-folder="{{badgesDefaultFolder}}" location="[[location]]" folder="[[badgesFolder]]"></mediator-data>
     <badge-view edit="{{edit}}" badges="{{item}}"></badge-view>
   </template>
 </dom-module>
