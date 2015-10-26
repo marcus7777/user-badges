@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "mediator-data": "marcus7777/mediator-data"
+    "mediator-data": "marcus7777/mediator-data",
+    "icon-pick": "marcus7777/icon-pick"
   }
 }
