@@ -3,13 +3,14 @@
 <link rel="import" href="badge-sm-list.html">
 <link rel="import" href="../paper-button/paper-button.html">
 <!--
-`<badge-view location="https://mediator-data.firebaseio-demo.com/" ></badge-view>`
+`<badge-view edit="{{edit}}" badges="{{item}}"></badge-view>`
 -->
 
 <dom-module id="badge-view">
   <template>
+    <mediator-data id="b" as-array="{{badges}}" location="{{location}}" folder="badges" type="firebase"></mediator-data>
     <div class="content">
-      <badge-sm-list on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
+      <badge-sm-list hidden="{{admin}}" on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
       <template is="dom-if" if="{{admin}}">
         <badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>
         <badge-input on-add-badge="addBadge"></badge-input>
@@ -23,10 +24,10 @@
     is: 'badge-view',
     properties: {
       badges: Array,
-      edit: {value: false}
+-     edit: {value: false}
     },
     addBadge: function(e) {
-      this.push('badges', {
+      this.$.b.push({
         icon: e.detail.icon,
         subtitle: e.detail.subtitle,
         title: e.detail.title,
@@ -35,7 +36,7 @@
       });
     },
     deleteBadge: function(e) {
-      if (this.edit) this.arrayDelete('badges', e.detail.badge);
+      this.arrayDelete('badges', e.detail.badge);
     },
     toggleView: function() {
       if (this.edit) this.admin = !this.admin;
