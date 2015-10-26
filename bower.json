@@ -1,0 +1,21 @@
+{
+  "name": "user-badges",
+  "homepage": "https://github.com/marcus7777/user-badges",
+  "authors": [
+    "Marcus Hitchins <marcus7777@gmail.com>"
+  ],
+  "description": "badges",
+  "main": "user-badges.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "mediator-data": "marcus7777/mediator-data"
+  }
+}
