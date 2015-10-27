@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "mediator-data": "marcus7777/mediator-data",
-    "icon-pick": "marcus7777/icon-pick"
+    "icon-pick": "marcus7777/icon-pick",
+    "sortable-list": "marcus7777/sortable-list"
   }
 }
