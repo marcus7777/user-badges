@@ -5,7 +5,9 @@
 -->
 <dom-module id="badge-list">
   <template>
-    <p class="no-more-msg" hidden="[[_empty(badges.length)]]">No badges</p>
+    <template is="dom-if" if="{{!badges.length}}">
+      <p>No badges</p>
+    </template>
     <sortable-list>
       <template is="dom-repeat" items="{{badges}}" observe="isComplete">
         <div><badge-item style="display: inline-block" badge="{{item}}"></badge-item></div>
