@@ -8,7 +8,7 @@
     <p class="no-more-msg" hidden="[[_empty(badges.length)]]">No badges</p>
     <sortable-list>
       <template is="dom-repeat" items="{{badges}}" observe="isComplete">
-        <badge-item style="display: inline-block" badge="{{item}}"></badge-item>
+        <div><badge-item style="display: inline-block" badge="{{item}}"></badge-item></div>
       </template>
     </sortable-list>
   </template>
