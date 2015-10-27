@@ -5,14 +5,19 @@
 <dom-module id="badge-list">
   <template>
     <p class="no-more-msg" hidden="[[_empty(badges.length)]]">No badges</p>
-    <template is="dom-repeat" items="{{badges}}" observe="isComplete">
-      <badge-item style="display: inline-block" badge="{{item}}"></badge-item>
-    </template>
+    <sortable-list>
+      <template is="dom-repeat" items="{{badges}}" observe="isComplete">
+        <badge-item style="display: inline-block" badge="{{item}}"></badge-item>
+      </template>
+    </sortable-list>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: 'badge-list',
+    properties: {
+      badges:{notify:true}
+    },
     _empty: function(length) {
       return !!length;
     }
