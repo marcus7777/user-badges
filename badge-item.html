@@ -10,6 +10,12 @@
 <dom-module id="badge-item">
   <template>
     <paper-material style="background: #fff; padding: 20px; margin: 5px;" class="row layout center">
+      <style>
+        paper-dialog  > * {
+          padding: 0 2px;
+        }
+      </style>
+
       <icon-pick style="float:right" value="{{badge.icon}}"></icon-pick>
       
       <paper-input id="badgeTitle" value="{{badge.title}}" label="Title"></paper-input>
