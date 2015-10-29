@@ -9,7 +9,7 @@
 
 <dom-module id="badge-view">
   <template>
-    <mediator-data id="b" as-array="{{badges}}" location="{{location}}" folder="badges" default-folder="{{defaultFolder}}"></mediator-data>
+    <mediator-data id="b" as-array="{{badges}}" location="{{location}}" folder="[[folder]]" default-folder="{{defaultFolder}}"></mediator-data>
     <div class="content">
       <badge-sm-list hidden="{{admin}}" on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
       <template is="dom-if" if="{{admin}}">
