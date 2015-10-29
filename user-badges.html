@@ -14,6 +14,8 @@
     properties: {
       folder: String,
       defaultFolder: {type:String,value:"default"},
+      edit: Boolean,
+      editDefault: Boolean,
       badgesFolder: {computed:"getBadgesFolder(folder)"},
       badgesDefaultFolder: {computed:"getBadgesDefaultFolder(defaultFolder)"}
     },
