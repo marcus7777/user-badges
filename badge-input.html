@@ -1,7 +1,6 @@
 <link rel="import" href="../iron-icon/iron-icon.html">
 <link rel="import" href="../paper-dialog/paper-dialog.html">
 <link rel="import" href="../paper-button/paper-button.html">
-<link rel="import" href="../icon-pick/icon-pick.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
 <!-- 
@@ -12,7 +11,6 @@
     <paper-dialog>
       <paper-input value="{{badgeTitle::change}}" label="Title"></paper-input>
       <paper-input value="{{badgeSubtitle::change}}" label="Subtitle"></paper-input>
-      <icon-pick icon="{{icon}}"></icon-pick>
       <paper-button on-tap="_add">Add</paper-button>
     </paper-dialog>
     <iron-icon icon="add" on-tap="add" ></iron-icon>
