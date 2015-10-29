@@ -29,7 +29,8 @@
     is: 'badge-view',
     properties: {
       badges: Array,
-      edit: {value: false}
+      edit: Boolean,
+      editDefault: Boolean
     },
     addBadge: function(e) {
       this.$.b.push({
