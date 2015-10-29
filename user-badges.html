@@ -6,6 +6,10 @@
 <dom-module id="user-badges">
   <template>
     <badge-view location="[[location]]" edit="{{edit}}" folder="[[badgesFolder]]" default-folder="{{badgesDefaultFolder}}" edit-default="{{editDefault}}"></badge-view>
+    <template is="dom-if" if="{{editDefault}}">
+      <h1>Edit default set:</h1>
+      <user-badges edit="true" location="{{location}}" folder="{{defaultFolder}}"></user-badges>
+    </template>
   </template>
 </dom-module>
 <script>
