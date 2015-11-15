@@ -1,20 +1,31 @@
 <link rel="import" href="badge-item.html">
 <link rel="import" href="../sortable-list/sortable-list.html">
+<link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
 <!--
 `<badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>`
 -->
 <dom-module id="badge-list">
   <template>
     <template is="dom-if" if="{{!badges.length}}">
-      <p>No badges</p>
+      <p>NO BADGES</p>
     </template>
+
     <sortable-list>
+
       <template is="dom-repeat" items="{{badges}}">
-        <div style="display:inline-block"><badge-item style="display: inline-block" badge="{{item}}"></badge-item></div>
+
+
+          <badge-item badge="{{item}}"></badge-item>
+        
+
       </template>
+    
     </sortable-list>
+
   </template>
+
 </dom-module>
+
 <script>
   Polymer({
     is: 'badge-list',
