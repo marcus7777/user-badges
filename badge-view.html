@@ -9,13 +9,28 @@
 
 <dom-module id="badge-view">
   <template>
+  <style>
+
+    paper-button {
+      background: #FF5722;
+  }
+  
+    paper-button {
+      color: #FFF;
+  }
+  
+    paper-button:hover {
+      background: #E64A19;
+  }
+
+  </style>
     <mediator-data id="b" as-array="{{badges}}" location="{{location}}" folder="[[folder]]" default-folder="{{defaultFolder}}"></mediator-data>
     <div class="content">
       <badge-sm-list hidden="{{admin}}" on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
       <template is="dom-if" if="{{admin}}">
         <badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>
         <badge-input on-add-badge="addBadge"></badge-input>
-        <paper-button raised on-tap="toggleView" >Done</paper-button>
+        <paper-button raised on-tap="toggleView">Done</paper-button>
       </template>
     </div>
   </template>
