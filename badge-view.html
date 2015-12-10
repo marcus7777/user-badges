@@ -14,7 +14,7 @@
       background: #E64A19;
     }
   </style>
-    <mediator-data edit-default id="b" as-array="{{badges}}" location="{{location}}" folder="{{folder}}" default-folder="{{defaultFolder}}"></mediator-data>
+    <mediator-data edit-default log="{{log}}" id="b" as-array="{{badges}}" location="{{location}}" folder="{{folder}}" default-folder="{{defaultFolder}}"></mediator-data>
     <div class="content">
       <badge-sm-list hidden="{{admin}}" on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
       <template is="dom-if" if="{{admin}}">
@@ -31,6 +31,7 @@
     properties: {
       badges: Array,
       edit: Boolean,
+      log: {type: Boolean, value: false},
       editDefault: Boolean
     },
     addBadge: function(e) {
