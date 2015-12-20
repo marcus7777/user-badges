@@ -18,15 +18,15 @@
     <div class="content">
       <badge-sm-list hidden="{{admin}}" on-tap="toggleView" badges="{{badges}}" on-delete-badge="deleteBadge"></badge-sm-list>
       <template is="dom-if" if="{{admin}}">
-        <badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>
-        <badge-input on-add-badge="addBadge"></badge-input>
+        <badge-list badges="{{badges}}" on-delete-badge="deleteBadge" style="float: left; clear: right; margin-bottom: 20px;"></badge-list>
+        <badge-input on-add-badge="addBadge" style="float: left;"></badge-input>
       </template>
       <template is="dom-if" if="[[admin]]">
         <paper-button raised on-tap="toggleView">Done</paper-button>
       </template>
     </div>
   </template>
-</dom-module> 
+</dom-module>
 <script>
   Polymer({
     is: 'badge-view',

@@ -17,9 +17,9 @@
         padding: 0 2px;
       }
     </style>
-    <paper-material style="background: #fff; padding: 20px; margin: 5px; height: 150px;" class="row layout center">
-      <icon-pick style="float:right; width: 50px;" value="{{badge.icon}}"></icon-pick>
-      <paper-input id="badgeTitle" value="{{badge.title}}" label="Title"></paper-input>
+    <paper-material style="background: #fff; padding: 20px; margin: 5px; height: 150px; width: 300px; float: left;" class="row layout center">
+      <icon-pick style="float:right; width: 80px;" value="{{badge.icon}}"></icon-pick>
+      <paper-input id="badgeTitle" value="{{badge.title}}" label="Title" style="width: 200px;"></paper-input>
       <paper-input id="badgeSubtitle" value="{{badge.subtitle}}" label="Subtitle"></paper-input>
       <paper-checkbox style="padding-top: 10px;" id="checkbox" checked="{{badge.isComplete}}"></paper-checkbox>
       <paper-icon-button style="color:gray; float:right;" icon="delete" aria-label="Delete Badge" tabindex="0" on-tap="_onDelete"></paper-icon-button>
