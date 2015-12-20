@@ -8,14 +8,13 @@
 -->
 <dom-module id="badge-input">
   <template>
-    <paper-button on-tap="add">
+    <paper-button  raised="1" on-tap="add" style="color: #FFF; background-color: #FF5722">
       Add
     </paper-button>
-    
     <paper-dialog>
       <paper-input value="{{badgeTitle::change}}" label="Title"></paper-input>
       <paper-input value="{{badgeSubtitle::change}}" label="Subtitle"></paper-input>
-      <paper-button raised on-tap="_add">Add</paper-button>
+      <paper-button raised="1" on-tap="_add" style="color: #FFF; background-color: #FF5722; padding: 10px;margin: 10px;">Add</paper-button>
     </paper-dialog>
   </template>
 </dom-module>
