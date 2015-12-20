@@ -21,7 +21,7 @@
         <badge-list badges="{{badges}}" on-delete-badge="deleteBadge"></badge-list>
         <badge-input on-add-badge="addBadge"></badge-input>
       </template>
-      <template is="dom-if" if="[[!admin]]">
+      <template is="dom-if" if="[[admin]]">
         <paper-button raised on-tap="toggleView">Done</paper-button>
       </template>
     </div>
