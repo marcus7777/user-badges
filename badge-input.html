@@ -3,18 +3,17 @@
 <link rel="import" href="../paper-button/paper-button.html">
 <link rel="import" href="../paper-input/paper-input.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
-<!-- 
+<link rel="import" href="../paper-fab/paper-fab.html">
+<!--
 `<badge-input on-add-badge="addBadge"></badge-input>`
 -->
 <dom-module id="badge-input">
   <template>
-    <paper-button  raised="1" on-tap="add" style="color: #FFF; background-color: #FF5722">
-      Add
-    </paper-button>
+    <paper-fab on-tap="add" icon="add" elevation="4" style="background: red;color: #FFF; position: fixed; right: 30px; bottom: 30px;"></paper-fab>
     <paper-dialog>
       <paper-input value="{{badgeTitle::change}}" label="Title"></paper-input>
       <paper-input value="{{badgeSubtitle::change}}" label="Subtitle"></paper-input>
-      <paper-button raised="1" on-tap="_add" style="color: #FFF; background-color: #FF5722; padding: 10px;margin: 10px;">Add</paper-button>
+      <paper-button raised="1" on-tap="_add" style="color: #FFF; background-color: #FF5722; padding: 10px;margin: 10px;">Done</paper-button>
     </paper-dialog>
   </template>
 </dom-module>
